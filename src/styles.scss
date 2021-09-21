@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming';
+@include mat-core(); // do próprio angular material
+
+$custom-pp-primary: mat-palette($mat-blue); // se eu quiser mudar o tema mudo aqui. Ex: ($mat-brown) e muda para o marrom
+$custom-pp-secondary: mat-palette($mat-indigo, A200, A400, 700);
+$custom-pp-warn: mat-palette($mat-red); // cor de alerta
+
+$custom-theme: mat-light-theme($custom-pp-primary, $custom-pp-secondary, $custom-pp-warn); // tema customizado
+
+@include angular-material-theme($custom-theme); // como parametro eu passo o tema customizado.
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
