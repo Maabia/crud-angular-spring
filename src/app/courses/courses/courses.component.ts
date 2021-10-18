@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Course } from '../model/course';
 import { CoursesService } from '../services/courses.service';
 
@@ -10,23 +11,17 @@ import { CoursesService } from '../services/courses.service';
 export class CoursesComponent implements OnInit {
 
   // variável 'courses' inicializada aqui
-  courses: Course[] = [
-    {
-      _id: '1',
-      name: 'Angular',
-      category: 'front-end'
-    }
-  ];
+  courses: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   constructor( private CoursesService: CoursesService) {
    // this.courses = []; Podemos inicializar a variável aqui tbm
+   this.courses = this.CoursesService.findAll();
 
   }
 
   ngOnInit(): void {
     // Antes era inicializado dentro do ngOnInit
-    this.courses = this.CoursesService.findAll();
   }
 
 }
