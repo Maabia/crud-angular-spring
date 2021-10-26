@@ -11,12 +11,12 @@ import { CoursesService } from '../services/courses.service';
 export class CoursesComponent implements OnInit {
 
   // variável 'courses' inicializada aqui
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   constructor( private CoursesService: CoursesService) {
    // this.courses = []; Podemos inicializar a variável aqui tbm
-   this.courses = this.CoursesService.findAll();
+   this.courses$ = this.CoursesService.findAll();
 
   }
 
