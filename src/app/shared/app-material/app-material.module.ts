@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 // ESSE MÓDULO NÃO É PARA CRIAR COMPONENTES E ORGANIZAR A APLICAÇÃO ESIM PARA ECONOMIZAR EM ALGUMASLINHAS DE CÓDIGO. POR ESSE MOTIVO, ELE NÃO TEM O imports: [] E NEM DAS declarations: [].
@@ -16,7 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ]
 
 })
